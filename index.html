@@ -11,8 +11,18 @@
   <main class="app-shell">
     <section class="todo-card" aria-labelledby="page-title">
       <header class="app-header">
-        <p class="eyebrow">今日專注</p>
-        <h1 id="page-title">待辦清單</h1>
+        <div class="header-row">
+          <div class="title-wrap">
+            <p class="eyebrow">今日專注</p>
+            <h1 id="page-title">待辦清單</h1>
+          </div>
+
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切換深色模式" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+            <span class="theme-label">深色模式</span>
+          </button>
+        </div>
+
         <p class="subtitle">把想完成的事，一件一件放進今天。</p>
       </header>
 
@@ -28,6 +38,12 @@
         >
         <button type="submit">新增</button>
       </form>
+
+      <div class="filter-group" role="tablist" aria-label="待辦篩選">
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">全部</button>
+        <button class="filter-button" type="button" data-filter="active" aria-pressed="false">未完成</button>
+        <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">已完成</button>
+      </div>
 
       <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
 
